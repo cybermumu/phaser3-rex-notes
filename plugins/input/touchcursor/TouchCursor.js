@@ -74,7 +74,8 @@ class TouchCursor extends VectorToCursorKeys {
     }
 
     onKeyDown(pointer) {
-        if (this.pointer !== pointer) {
+        if ((this.pointer !== pointer) ||
+            (this.pointer.camera === undefined)) {
             return;
         }
 
